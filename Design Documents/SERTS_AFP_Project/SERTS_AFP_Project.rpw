@@ -5,7 +5,7 @@ I-Logix-RPY-Archive version 8.12.0 * 9728113
 	}
 	- isLoadOnDemand = 0;
 	- myViewsWithID = { IRPYRawContainer 
-		- size = 4;
+		- size = 5;
 		- value = 
 		{ CGEMdiDiagramParams 
 			- _placement = { CCommon_WINDOWPLACEMENT 
@@ -15,7 +15,7 @@ I-Logix-RPY-Archive version 8.12.0 * 9728113
 				- m_ptMinPositionX = -1;
 				- m_ptMinPositionY = -1;
 				- m_ptMaxPositionX = -8;
-				- m_ptMaxPositionY = -30;
+				- m_ptMaxPositionY = -31;
 				- m_nLeft = 175;
 				- m_nTop = 175;
 				- m_nRight = 885;
@@ -31,9 +31,9 @@ I-Logix-RPY-Archive version 8.12.0 * 9728113
 				- _id = GUID db91eeb5-8b7e-489c-9fef-94db76ba30eb;
 			}
 			- _UpLeft = 0 0 ;
-			- _DownRight = 1143 678 ;
+			- _DownRight = 1146 678 ;
 			- _instanceName = "";
-			- m_nDiagramIndex = 2;
+			- m_nDiagramIndex = 3;
 			- m_bIsActiveView = 0;
 		}
 		{ CGEMdiDiagramParams 
@@ -44,7 +44,7 @@ I-Logix-RPY-Archive version 8.12.0 * 9728113
 				- m_ptMinPositionX = -1;
 				- m_ptMinPositionY = -1;
 				- m_ptMaxPositionX = -8;
-				- m_ptMaxPositionY = -30;
+				- m_ptMaxPositionY = -31;
 				- m_nLeft = 100;
 				- m_nTop = 100;
 				- m_nRight = 810;
@@ -60,20 +60,20 @@ I-Logix-RPY-Archive version 8.12.0 * 9728113
 				- _id = GUID e4f88001-dd80-4678-9e57-f1b46dc8adc6;
 			}
 			- _UpLeft = 0 0 ;
-			- _DownRight = 673 399 ;
+			- _DownRight = 674 399 ;
 			- _instanceName = "";
-			- m_nDiagramIndex = 0;
+			- m_nDiagramIndex = 1;
 			- m_bIsActiveView = 0;
 		}
 		{ CGEMdiDiagramParams 
 			- _placement = { CCommon_WINDOWPLACEMENT 
 				- m_nLength = 44;
-				- m_nFlags = 2;
-				- m_showCmd = 3;
+				- m_nFlags = 0;
+				- m_showCmd = 1;
 				- m_ptMinPositionX = -1;
 				- m_ptMinPositionY = -1;
 				- m_ptMaxPositionX = -8;
-				- m_ptMaxPositionY = -30;
+				- m_ptMaxPositionY = -31;
 				- m_nLeft = 75;
 				- m_nTop = 75;
 				- m_nRight = 785;
@@ -88,10 +88,39 @@ I-Logix-RPY-Archive version 8.12.0 * 9728113
 				- _name = "Sequence_Diagram_Indexing";
 				- _id = GUID 54e1002f-b20e-43a6-944b-be5ad2c58056;
 			}
-			- _UpLeft = 0 0 ;
-			- _DownRight = 914 642 ;
+			- _UpLeft = 45 0 ;
+			- _DownRight = 651 340 ;
 			- _instanceName = "";
-			- m_nDiagramIndex = 1;
+			- m_nDiagramIndex = 2;
+			- m_bIsActiveView = 0;
+		}
+		{ CGEMdiDiagramParams 
+			- _placement = { CCommon_WINDOWPLACEMENT 
+				- m_nLength = 44;
+				- m_nFlags = 2;
+				- m_showCmd = 3;
+				- m_ptMinPositionX = -1;
+				- m_ptMinPositionY = -1;
+				- m_ptMaxPositionX = -8;
+				- m_ptMaxPositionY = -31;
+				- m_nLeft = 104;
+				- m_nTop = 104;
+				- m_nRight = 895;
+				- m_nBottom = 472;
+			}
+			- _wasOpenedOnCloseProject = 1;
+			- _theDiagram = { IHandle 
+				- _m2Class = "IMSC";
+				- _filename = "";
+				- _subsystem = "";
+				- _class = "";
+				- _name = "Sequence_Diagram_Playing";
+				- _id = GUID ed6d7517-1e0f-44ae-8548-8aa7fc8ad33b;
+			}
+			- _UpLeft = 0 0 ;
+			- _DownRight = 926 483 ;
+			- _instanceName = "";
+			- m_nDiagramIndex = 0;
 			- m_bIsActiveView = 1;
 		}
 		{ CGEMdiDiagramParams 
@@ -118,13 +147,13 @@ I-Logix-RPY-Archive version 8.12.0 * 9728113
 				- _id = GUID 51719c9a-638d-4371-b4b7-384c43f044e2;
 			}
 			- _UpLeft = 0 0 ;
-			- _DownRight = 673 399 ;
+			- _DownRight = 680 402 ;
 			- _instanceName = "";
-			- m_nDiagramIndex = 3;
+			- m_nDiagramIndex = 4;
 			- m_bIsActiveView = 0;
 		}
 	}
-	- _fullName = "C:\\Users\\david.burmeier\\IBM\\Rational\\Rhapsody\\8.1.5\\SERTS_AFP_Project\\SERTS_AFP_Project";
+	- _fullName = "C:\\repos\\SERTS-Final-Project\\SERTS_AFP_Project\\SERTS_AFP_Project";
 	- m_SearchScopeList = { IRPYRawContainer 
 		- size = 0;
 	}
@@ -140,5 +169,15 @@ I-Logix-RPY-Archive version 8.12.0 * 9728113
 	- mapOslcRmCollections = { IRPYRawContainer 
 		- size = 0;
 	}
+
+	- m_favoritesTree = {
+		count=1;
+		{ - favoritesItem
+			generation = 0;
+			name = Favorites;
+			idOrFolder = folder;
+		}
+	}
+
 }
 
