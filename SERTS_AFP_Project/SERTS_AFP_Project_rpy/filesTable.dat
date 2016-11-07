@@ -1,0 +1,11 @@
+I-Logix-RPY-Archive version 8.12.0 * 9728113
+
+- filesTable = { IRPYRawContainer 
+	- size = 4;
+	- value = "SERTS_AFP_Project.rpy" ""
+	"SERTS_AFP_Project_rpy\\AFP_System.sbs" "AFP_System"
+	"SERTS_AFP_Project_rpy\\Default.sbs" "Default"
+	"SERTS_AFP_Project_rpy\\DefaultComponent.cmp" "DefaultComponent"
+	
+}
+
