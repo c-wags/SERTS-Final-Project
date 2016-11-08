@@ -3,10 +3,10 @@ I-Logix-RPY-Archive version 8.12.0 C 9728113
 	- _id = GUID d53d4b86-3025-4dcd-86e4-d98332f6384f;
 	- _myState = 8192;
 	- _name = "Default";
-	- _modifiedTimeWeak = 11.4.2016::14:36:26;
-	- _lastID = 35;
+	- _modifiedTimeWeak = 11.8.2016::15:22:10;
+	- _lastID = 37;
 	- Declaratives = { IRPYRawContainer 
-		- size = 17;
+		- size = 19;
 		- value = 
 		{ IStereotype 
 			- _id = GUID 0f0e01bd-9942-4431-ab83-f3f9425c2683;
@@ -181,8 +181,28 @@ I-Logix-RPY-Archive version 8.12.0 C 9728113
 				- value = "ClassifierRole"; 
 			}
 		}
+		{ IStereotype 
+			- _id = GUID 980e6b42-c680-4a8d-9e43-15027ab81550;
+			- _myState = 8192;
+			- _name = "human user";
+			- _modifiedTimeWeak = 11.8.2016::14:41:23;
+			- _m2Classes = { IRPYRawContainer 
+				- size = 1;
+				- value = "ClassifierRole"; 
+			}
+		}
+		{ IStereotype 
+			- _id = GUID 91275842-4dfc-4dc2-8891-5b6708752849;
+			- _myState = 8192;
+			- _name = "Alt";
+			- _modifiedTimeWeak = 11.8.2016::15:22:10;
+			- _m2Classes = { IRPYRawContainer 
+				- size = 1;
+				- value = "InteractionOccurrence"; 
+			}
+		}
 	}
-	- weakCGTime = 11.4.2016::14:36:26;
+	- weakCGTime = 11.8.2016::15:22:10;
 	- strongCGTime = 10.11.2016::14:1:36;
 	- _defaultComposite = GUID 5e090a94-d771-4fdc-a3ff-049218bd85b8;
 	- _eventsBaseID = -1;
@@ -193,8 +213,8 @@ I-Logix-RPY-Archive version 8.12.0 C 9728113
 			- _id = GUID 5e090a94-d771-4fdc-a3ff-049218bd85b8;
 			- _myState = 40960;
 			- _name = "TopLevel";
-			- _modifiedTimeWeak = 10.18.2016::14:21:53;
-			- weakCGTime = 10.18.2016::14:21:53;
+			- _modifiedTimeWeak = 11.4.2016::14:36:26;
+			- weakCGTime = 11.4.2016::14:36:26;
 			- strongCGTime = 10.11.2016::14:1:36;
 			- _multiplicity = "";
 			- _itsStateChart = { IHandle 
@@ -547,7 +567,7 @@ I-Logix-RPY-Archive version 8.12.0 C 9728113
 							}
 						}
 					}
-					- _version = 11.4.2016::9:26:44;
+					- _version = 11.8.2016::8:40:21;
 					- _baseVersion = 1.2.1990::0:0:0;
 					- _diagram = GUID db91eeb5-8b7e-489c-9fef-94db76ba30eb;
 					- Views = { IRPYRawContainer 
