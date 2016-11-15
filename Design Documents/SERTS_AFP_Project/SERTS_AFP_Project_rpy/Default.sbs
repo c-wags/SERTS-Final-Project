@@ -3,7 +3,7 @@ I-Logix-RPY-Archive version 8.12.0 C 9728113
 	- _id = GUID d53d4b86-3025-4dcd-86e4-d98332f6384f;
 	- _myState = 8192;
 	- _name = "Default";
-	- _modifiedTimeWeak = 11.8.2016::15:22:10;
+	- _modifiedTimeWeak = 11.15.2016::3:11:57;
 	- _lastID = 37;
 	- Declaratives = { IRPYRawContainer 
 		- size = 19;
@@ -202,7 +202,7 @@ I-Logix-RPY-Archive version 8.12.0 C 9728113
 			}
 		}
 	}
-	- weakCGTime = 11.8.2016::15:22:10;
+	- weakCGTime = 11.15.2016::3:11:57;
 	- strongCGTime = 10.11.2016::14:1:36;
 	- _defaultComposite = GUID 5e090a94-d771-4fdc-a3ff-049218bd85b8;
 	- _eventsBaseID = -1;
@@ -213,8 +213,8 @@ I-Logix-RPY-Archive version 8.12.0 C 9728113
 			- _id = GUID 5e090a94-d771-4fdc-a3ff-049218bd85b8;
 			- _myState = 40960;
 			- _name = "TopLevel";
-			- _modifiedTimeWeak = 11.4.2016::14:36:26;
-			- weakCGTime = 11.4.2016::14:36:26;
+			- _modifiedTimeWeak = 11.8.2016::15:22:10;
+			- weakCGTime = 11.8.2016::15:22:10;
 			- strongCGTime = 10.11.2016::14:1:36;
 			- _multiplicity = "";
 			- _itsStateChart = { IHandle 
@@ -567,7 +567,7 @@ I-Logix-RPY-Archive version 8.12.0 C 9728113
 							}
 						}
 					}
-					- _version = 11.8.2016::8:40:21;
+					- _version = 11.14.2016::21:2:20;
 					- _baseVersion = 1.2.1990::0:0:0;
 					- _diagram = GUID db91eeb5-8b7e-489c-9fef-94db76ba30eb;
 					- Views = { IRPYRawContainer 
@@ -1473,7 +1473,7 @@ I-Logix-RPY-Archive version 8.12.0 C 9728113
 		{ IUseCase 
 			- _id = GUID 7536e0b8-feea-48ba-84d7-6d91171e7e71;
 			- _myState = 8192;
-			- _name = "Playing";
+			- _name = "Indexing";
 			- _modifiedTimeWeak = 1.2.1990::0:0:0;
 			- weakCGTime = 1.2.1990::0:0:0;
 			- strongCGTime = 1.2.1990::0:0:0;
@@ -1482,7 +1482,7 @@ I-Logix-RPY-Archive version 8.12.0 C 9728113
 				- _m2Class = "";
 			}
 			- Associations = { IRPYRawContainer 
-				- size = 1;
+				- size = 2;
 				- value = 
 				{ IAssociationEnd 
 					- _id = GUID 562d9750-d693-4fae-b3f4-e861a15d03ed;
@@ -1502,6 +1502,24 @@ I-Logix-RPY-Archive version 8.12.0 C 9728113
 					- _linkType = Assoc;
 					- _navigability = Navigable;
 				}
+				{ IAssociationEnd 
+					- _id = GUID e0f71053-fbf3-433f-842b-92d5fcc47962;
+					- _myState = 10240;
+					- _name = "itsHuman User_1";
+					- _modifiedTimeWeak = 1.2.1990::0:0:0;
+					- _multiplicity = "1";
+					- _otherClass = { IClassifierHandle 
+						- _m2Class = "IActor";
+						- _id = GUID f41bc036-ee67-4235-9c85-2eaed8bd25a1;
+					}
+					- _inverse = { IHandle 
+						- _m2Class = "IAssociationEnd";
+						- _id = GUID 590cd641-66c7-433b-a18a-fadffe3d4663;
+					}
+					- _linkName = "";
+					- _linkType = Assoc;
+					- _navigability = Navigable;
+				}
 			}
 			- _classModifier = Unspecified;
 			- _EntryPoints = { IRPYRawContainer 
@@ -1516,7 +1534,7 @@ I-Logix-RPY-Archive version 8.12.0 C 9728113
 			- _id = GUID f41bc036-ee67-4235-9c85-2eaed8bd25a1;
 			- _myState = 8192;
 			- _name = "Human User";
-			- _modifiedTimeWeak = 10.11.2016::14:38:43;
+			- _modifiedTimeWeak = 11.15.2016::3:13:22;
 			- _theMainDiagram = { IHandle 
 				- _m2Class = "IDiagram";
 				- _filename = "";
@@ -1525,19 +1543,19 @@ I-Logix-RPY-Archive version 8.12.0 C 9728113
 				- _name = "Model1";
 				- _id = GUID 2d3137b1-5705-45fe-a5c2-72ff87c00637;
 			}
-			- weakCGTime = 10.11.2016::14:38:43;
+			- weakCGTime = 11.15.2016::3:13:22;
 			- strongCGTime = 10.11.2016::14:1:36;
 			- _multiplicity = "";
 			- _itsStateChart = { IHandle 
 				- _m2Class = "";
 			}
 			- Associations = { IRPYRawContainer 
-				- size = 1;
+				- size = 2;
 				- value = 
 				{ IAssociationEnd 
 					- _id = GUID 57b86c80-c00d-46ff-a54b-d5b9589afbec;
 					- _myState = 10240;
-					- _name = "itsPlaying";
+					- _name = "itsIndexing";
 					- _modifiedTimeWeak = 1.2.1990::0:0:0;
 					- _multiplicity = "1";
 					- _otherClass = { IClassifierHandle 
@@ -1547,6 +1565,24 @@ I-Logix-RPY-Archive version 8.12.0 C 9728113
 					- _inverse = { IHandle 
 						- _m2Class = "IAssociationEnd";
 						- _id = GUID 562d9750-d693-4fae-b3f4-e861a15d03ed;
+					}
+					- _linkName = "";
+					- _linkType = Assoc;
+					- _navigability = Navigable;
+				}
+				{ IAssociationEnd 
+					- _id = GUID 590cd641-66c7-433b-a18a-fadffe3d4663;
+					- _myState = 10240;
+					- _name = "itsIndexing_1";
+					- _modifiedTimeWeak = 1.2.1990::0:0:0;
+					- _multiplicity = "1";
+					- _otherClass = { IClassifierHandle 
+						- _m2Class = "IUseCase";
+						- _id = GUID 7536e0b8-feea-48ba-84d7-6d91171e7e71;
+					}
+					- _inverse = { IHandle 
+						- _m2Class = "IAssociationEnd";
+						- _id = GUID e0f71053-fbf3-433f-842b-92d5fcc47962;
 					}
 					- _linkName = "";
 					- _linkType = Assoc;

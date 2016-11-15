@@ -3,7 +3,7 @@ I-Logix-RPY-Archive version 8.12.0 C 9728113
 	- _id = GUID 2984d622-438f-41ff-b1d0-322c6eac2eb7;
 	- _myState = 8192;
 	- _name = "SERTS_AFP_Project";
-	- _modifiedTimeWeak = 11.8.2016::15:37:4;
+	- _modifiedTimeWeak = 11.15.2016::3:11:46;
 	- _lastID = 6;
 	- _UserColors = { IRPYRawContainer 
 		- size = 16;
@@ -873,7 +873,7 @@ I-Logix-RPY-Archive version 8.12.0 C 9728113
 				}
 			}
 			- _modifiedTimeWeak = 1.2.1990::0:0:0;
-			- _lastModifiedTime = "10.18.2016::14:22:12";
+			- _lastModifiedTime = "11.14.2016::23:45:7";
 			- _graphicChart = { CGIClassChart 
 				- _id = GUID fb0044a4-2f7a-40d2-8903-43aaeda6ab90;
 				- m_type = 0;
@@ -1193,7 +1193,7 @@ I-Logix-RPY-Archive version 8.12.0 C 9728113
 						- m_nOrientationCtrlPt = 5;
 					}
 					- m_drawBehavior = 2056;
-					- m_transform = 0.0489381 0 0 0.124343 98.3869 95.6655 ;
+					- m_transform = 0.0489381 0 0 0.124343 95.3869 85.6655 ;
 					- m_bIsPreferencesInitialized = 1;
 					- m_AdditionalLabel = { CGIText 
 						- m_str = "";
@@ -5945,9 +5945,6 @@ I-Logix-RPY-Archive version 8.12.0 C 9728113
 						}
 					}
 				}
-				- InteractionOccurrences = { IRPYRawContainer 
-					- size = 0;
-				}
 			}
 		}
 		{ IMSC 
@@ -6918,9 +6915,6 @@ I-Logix-RPY-Archive version 8.12.0 C 9728113
 						}
 					}
 				}
-				- InteractionOccurrences = { IRPYRawContainer 
-					- size = 0;
-				}
 			}
 		}
 	}
@@ -7111,7 +7105,7 @@ I-Logix-RPY-Archive version 8.12.0 C 9728113
 			}
 			- _name = "Use_Case_Diagram";
 			- _modifiedTimeWeak = 1.2.1990::0:0:0;
-			- _lastModifiedTime = "10.11.2016::14:38:43";
+			- _lastModifiedTime = "11.15.2016::3:13:57";
 			- _graphicChart = { CGIClassChart 
 				- _id = GUID 485b6257-f07f-4492-9dca-dce4fb3da18c;
 				- m_type = 0;
@@ -7135,7 +7129,7 @@ I-Logix-RPY-Archive version 8.12.0 C 9728113
 				}
 				- m_drawBehavior = 0;
 				- m_bIsPreferencesInitialized = 0;
-				- elementList = 4;
+				- elementList = 6;
 				{ CGIClass 
 					- _id = GUID 25b0a7f6-808b-4289-9ca5-debdac32e3d3;
 					- m_type = 78;
@@ -7266,12 +7260,12 @@ I-Logix-RPY-Archive version 8.12.0 C 9728113
 						- _filename = "Default.sbs";
 						- _subsystem = "Default";
 						- _class = "";
-						- _name = "Playing";
+						- _name = "Indexing";
 						- _id = GUID 7536e0b8-feea-48ba-84d7-6d91171e7e71;
 					}
 					- m_pParent = GUID 25b0a7f6-808b-4289-9ca5-debdac32e3d3;
 					- m_name = { CGIText 
-						- m_str = "Playing";
+						- m_str = "Indexing";
 						- m_style = "Arial" 10 0 0 0 1 ;
 						- m_color = { IColor 
 							- m_fgColor = 0;
@@ -7284,7 +7278,7 @@ I-Logix-RPY-Archive version 8.12.0 C 9728113
 						- m_nOrientationCtrlPt = 5;
 					}
 					- m_drawBehavior = 2056;
-					- m_transform = 0.124004 0 0 0.0961718 383.248 242.096 ;
+					- m_transform = 0.124004 0 0 0.0961718 406.248 328.096 ;
 					- m_bIsPreferencesInitialized = 1;
 					- m_AdditionalLabel = { CGIText 
 						- m_str = "";
@@ -7339,7 +7333,7 @@ I-Logix-RPY-Archive version 8.12.0 C 9728113
 						- _filename = "Default.sbs";
 						- _subsystem = "Default";
 						- _class = "Human User";
-						- _name = "itsPlaying";
+						- _name = "itsIndexing";
 						- _id = GUID 57b86c80-c00d-46ff-a54b-d5b9589afbec;
 					}
 					- m_pParent = ;
@@ -7385,7 +7379,7 @@ I-Logix-RPY-Archive version 8.12.0 C 9728113
 						- _m2Class = "IAssociationEnd";
 						- _filename = "Default.sbs";
 						- _subsystem = "Default";
-						- _class = "Playing";
+						- _class = "Indexing";
 						- _name = "itsHuman User";
 						- _id = GUID 562d9750-d693-4fae-b3f4-e861a15d03ed;
 					}
@@ -7429,6 +7423,230 @@ I-Logix-RPY-Archive version 8.12.0 C 9728113
 						- m_nIdent = 3;
 						- m_bImplicitSetRectPoints = 0;
 						- m_nOrientationCtrlPt = 2;
+					}
+					- m_sourceMultiplicity = { CGIText 
+						- m_str = "";
+						- m_style = "Arial" 10 0 0 0 1 ;
+						- m_color = { IColor 
+							- m_fgColor = 0;
+							- m_bgColor = 0;
+							- m_bgFlag = 0;
+						}
+						- m_position = 1 0 0  ;
+						- m_nIdent = 4;
+						- m_bImplicitSetRectPoints = 0;
+					}
+					- m_targetMultiplicity = { CGIText 
+						- m_str = "";
+						- m_style = "Arial" 10 0 0 0 1 ;
+						- m_color = { IColor 
+							- m_fgColor = 0;
+							- m_bgColor = 0;
+							- m_bgFlag = 0;
+						}
+						- m_position = 1 0 0  ;
+						- m_nIdent = 5;
+						- m_bImplicitSetRectPoints = 0;
+					}
+					- m_sourceQualifier = { CGIText 
+						- m_str = "";
+						- m_style = "Arial" 10 0 0 0 1 ;
+						- m_color = { IColor 
+							- m_fgColor = 0;
+							- m_bgColor = 0;
+							- m_bgFlag = 0;
+						}
+						- m_position = 1 0 0  ;
+						- m_nIdent = 6;
+						- m_bImplicitSetRectPoints = 0;
+						- m_nOrientationCtrlPt = 8;
+					}
+					- m_targetQualifier = { CGIText 
+						- m_str = "";
+						- m_style = "Arial" 10 0 0 0 1 ;
+						- m_color = { IColor 
+							- m_fgColor = 0;
+							- m_bgColor = 0;
+							- m_bgFlag = 0;
+						}
+						- m_position = 1 0 0  ;
+						- m_nIdent = 7;
+						- m_bImplicitSetRectPoints = 0;
+						- m_nOrientationCtrlPt = 8;
+					}
+					- m_specificType = symmetric_type;
+				}
+				{ CGIBasicClass 
+					- _id = GUID 81330597-a5b1-495f-b10b-2ae8a2ca194e;
+					- m_type = 125;
+					- m_pModelObject = { IHandle 
+						- _m2Class = "IUseCase";
+						- _filename = "Default.sbs";
+						- _subsystem = "Default";
+						- _class = "";
+						- _name = "Indexing";
+						- _id = GUID 7536e0b8-feea-48ba-84d7-6d91171e7e71;
+					}
+					- m_pParent = GUID 25b0a7f6-808b-4289-9ca5-debdac32e3d3;
+					- m_name = { CGIText 
+						- m_str = "Indexing";
+						- m_style = "Arial" 10 0 0 0 1 ;
+						- m_color = { IColor 
+							- m_fgColor = 0;
+							- m_bgColor = 0;
+							- m_bgFlag = 0;
+						}
+						- m_position = 1 0 0  ;
+						- m_nIdent = 0;
+						- m_bImplicitSetRectPoints = 0;
+						- m_nOrientationCtrlPt = 5;
+					}
+					- m_drawBehavior = 2056;
+					- m_transform = 0.124004 0 0 0.0961718 412.248 179.096 ;
+					- m_bIsPreferencesInitialized = 1;
+					- m_AdditionalLabel = { CGIText 
+						- m_str = "";
+						- m_style = "Arial" 10 0 0 0 1 ;
+						- m_color = { IColor 
+							- m_fgColor = 0;
+							- m_bgColor = 0;
+							- m_bgFlag = 0;
+						}
+						- m_position = 1 0 0  ;
+						- m_nIdent = 0;
+						- m_bImplicitSetRectPoints = 0;
+						- m_nOrientationCtrlPt = 1;
+					}
+					- m_polygon = 4 -2 -1  -2 1070  1127 1070  1127 -1  ;
+					- m_nNameFormat = 0;
+					- m_nIsNameFormat = 0;
+					- Compartments = { IRPYRawContainer 
+						- size = 0;
+					}
+				}
+				{ CGIAssociationEnd 
+					- _id = GUID db9acdb3-64e5-4161-a6c6-7040347e4113;
+					- _properties = { IPropertyContainer 
+						- Subjects = { IRPYRawContainer 
+							- size = 1;
+							- value = 
+							{ IPropertySubject 
+								- _Name = "General";
+								- Metaclasses = { IRPYRawContainer 
+									- size = 1;
+									- value = 
+									{ IPropertyMetaclass 
+										- _Name = "Graphics";
+										- Properties = { IRPYRawContainer 
+											- size = 1;
+											- value = 
+											{ IProperty 
+												- _Name = "ShowLabels";
+												- _Value = "False";
+												- _Type = Bool;
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+					- m_type = 94;
+					- m_pModelObject = { IHandle 
+						- _m2Class = "IAssociationEnd";
+						- _filename = "Default.sbs";
+						- _subsystem = "Default";
+						- _class = "Indexing";
+						- _name = "itsHuman User_1";
+						- _id = GUID e0f71053-fbf3-433f-842b-92d5fcc47962;
+					}
+					- m_pParent = ;
+					- m_name = { CGIText 
+						- m_str = "";
+						- m_style = "Arial" 10 0 0 0 1 ;
+						- m_color = { IColor 
+							- m_fgColor = 0;
+							- m_bgColor = 0;
+							- m_bgFlag = 0;
+						}
+						- m_position = 1 0 0  ;
+						- m_nIdent = 0;
+						- m_bImplicitSetRectPoints = 0;
+						- m_nOrientationCtrlPt = 8;
+					}
+					- m_drawBehavior = 4096;
+					- m_bIsPreferencesInitialized = 1;
+					- m_pSource = GUID 81330597-a5b1-495f-b10b-2ae8a2ca194e;
+					- m_sourceType = 'F';
+					- m_pTarget = GUID e9e38e65-bb2c-4294-8487-0536e6e52e53;
+					- m_targetType = 'T';
+					- m_direction = ' ';
+					- m_rpn = { CGIText 
+						- m_str = "";
+						- m_style = "Arial" 10 0 0 0 1 ;
+						- m_color = { IColor 
+							- m_fgColor = 0;
+							- m_bgColor = 0;
+							- m_bgFlag = 0;
+						}
+						- m_position = 1 0 0  ;
+						- m_nIdent = 0;
+						- m_bImplicitSetRectPoints = 0;
+						- m_nOrientationCtrlPt = 7;
+					}
+					- m_anglePoint1 = 0 0 ;
+					- m_anglePoint2 = 0 0 ;
+					- m_line_style = 0;
+					- m_SourcePort = -18 519 ;
+					- m_TargetPort = 1259 735 ;
+					- m_pInverseModelObject = { IAssociationEndHandle 
+						- _m2Class = "IAssociationEnd";
+						- _filename = "Default.sbs";
+						- _subsystem = "Default";
+						- _class = "Human User";
+						- _name = "itsIndexing_1";
+						- _id = GUID 590cd641-66c7-433b-a18a-fadffe3d4663;
+					}
+					- m_pInstance = { IObjectLinkHandle 
+						- _m2Class = "";
+					}
+					- m_pInverseInstance = { IObjectLinkHandle 
+						- _m2Class = "";
+					}
+					- m_bShowSourceMultiplicity = 0;
+					- m_bShowSourceRole = 0;
+					- m_bShowTargetMultiplicity = 0;
+					- m_bShowTargetRole = 0;
+					- m_bShowLinkName = 1;
+					- m_bShowSpecificType = 0;
+					- m_bInstance = 0;
+					- m_bShowQualifier1 = 0;
+					- m_bShowQualifier2 = 0;
+					- m_sourceRole = { CGIText 
+						- m_str = "itsIndexing_1";
+						- m_style = "Arial" 10 0 0 0 1 ;
+						- m_color = { IColor 
+							- m_fgColor = 0;
+							- m_bgColor = 0;
+							- m_bgFlag = 0;
+						}
+						- m_position = 1 0 0  ;
+						- m_nIdent = 2;
+						- m_bImplicitSetRectPoints = 0;
+						- m_nOrientationCtrlPt = 2;
+					}
+					- m_targetRole = { CGIText 
+						- m_str = "itsHuman User_1";
+						- m_style = "Arial" 10 0 0 0 1 ;
+						- m_color = { IColor 
+							- m_fgColor = 0;
+							- m_bgColor = 0;
+							- m_bgFlag = 0;
+						}
+						- m_position = 1 0 0  ;
+						- m_nIdent = 3;
+						- m_bImplicitSetRectPoints = 0;
+						- m_nOrientationCtrlPt = 0;
 					}
 					- m_sourceMultiplicity = { CGIText 
 						- m_str = "";
