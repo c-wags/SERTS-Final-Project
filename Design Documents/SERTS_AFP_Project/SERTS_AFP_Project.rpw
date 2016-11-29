@@ -5,8 +5,37 @@ I-Logix-RPY-Archive version 8.12.0 * 9728113
 	}
 	- isLoadOnDemand = 0;
 	- myViewsWithID = { IRPYRawContainer 
-		- size = 4;
+		- size = 7;
 		- value = 
+		{ CGEMdiDiagramParams 
+			- _placement = { CCommon_WINDOWPLACEMENT 
+				- m_nLength = 44;
+				- m_nFlags = 2;
+				- m_showCmd = 3;
+				- m_ptMinPositionX = -1;
+				- m_ptMinPositionY = -1;
+				- m_ptMaxPositionX = -8;
+				- m_ptMaxPositionY = -30;
+				- m_nLeft = 75;
+				- m_nTop = 75;
+				- m_nRight = 509;
+				- m_nBottom = 382;
+			}
+			- _wasOpenedOnCloseProject = 1;
+			- _theDiagram = { IHandle 
+				- _m2Class = "IStateChartDiagram";
+				- _filename = "Default.sbs";
+				- _subsystem = "Default";
+				- _class = "class_37";
+				- _name = "StatechartDiagram";
+				- _id = GUID ca1b4755-1335-4900-b462-f2163e0b694d;
+			}
+			- _UpLeft = 0 0 ;
+			- _DownRight = 538 411 ;
+			- _instanceName = "";
+			- m_nDiagramIndex = 7;
+			- m_bIsActiveView = 1;
+		}
 		{ CGEMdiDiagramParams 
 			- _placement = { CCommon_WINDOWPLACEMENT 
 				- m_nLength = 44;
@@ -33,7 +62,36 @@ I-Logix-RPY-Archive version 8.12.0 * 9728113
 			- _UpLeft = 0 0 ;
 			- _DownRight = 1140 676 ;
 			- _instanceName = "";
-			- m_nDiagramIndex = 3;
+			- m_nDiagramIndex = 5;
+			- m_bIsActiveView = 0;
+		}
+		{ CGEMdiDiagramParams 
+			- _placement = { CCommon_WINDOWPLACEMENT 
+				- m_nLength = 44;
+				- m_nFlags = 0;
+				- m_showCmd = 1;
+				- m_ptMinPositionX = -1;
+				- m_ptMinPositionY = -1;
+				- m_ptMaxPositionX = -8;
+				- m_ptMaxPositionY = -30;
+				- m_nLeft = 0;
+				- m_nTop = 0;
+				- m_nRight = 434;
+				- m_nBottom = 307;
+			}
+			- _wasOpenedOnCloseProject = 1;
+			- _theDiagram = { IHandle 
+				- _m2Class = "IDiagram";
+				- _filename = "";
+				- _subsystem = "";
+				- _class = "";
+				- _name = "Model1";
+				- _id = GUID 2d3137b1-5705-45fe-a5c2-72ff87c00637;
+			}
+			- _UpLeft = 0 0 ;
+			- _DownRight = 397 248 ;
+			- _instanceName = "";
+			- m_nDiagramIndex = 0;
 			- m_bIsActiveView = 0;
 		}
 		{ CGEMdiDiagramParams 
@@ -62,7 +120,7 @@ I-Logix-RPY-Archive version 8.12.0 * 9728113
 			- _UpLeft = 0 0 ;
 			- _DownRight = 1051 592 ;
 			- _instanceName = "";
-			- m_nDiagramIndex = 2;
+			- m_nDiagramIndex = 4;
 			- m_bIsActiveView = 0;
 		}
 		{ CGEMdiDiagramParams 
@@ -91,14 +149,43 @@ I-Logix-RPY-Archive version 8.12.0 * 9728113
 			- _UpLeft = 0 7 ;
 			- _DownRight = 908 355 ;
 			- _instanceName = "";
-			- m_nDiagramIndex = 1;
+			- m_nDiagramIndex = 3;
 			- m_bIsActiveView = 0;
 		}
 		{ CGEMdiDiagramParams 
 			- _placement = { CCommon_WINDOWPLACEMENT 
 				- m_nLength = 44;
-				- m_nFlags = 2;
-				- m_showCmd = 3;
+				- m_nFlags = 0;
+				- m_showCmd = 1;
+				- m_ptMinPositionX = -1;
+				- m_ptMinPositionY = -1;
+				- m_ptMaxPositionX = -8;
+				- m_ptMaxPositionY = -30;
+				- m_nLeft = 50;
+				- m_nTop = 50;
+				- m_nRight = 484;
+				- m_nBottom = 357;
+			}
+			- _wasOpenedOnCloseProject = 1;
+			- _theDiagram = { IHandle 
+				- _m2Class = "IDiagram";
+				- _filename = "";
+				- _subsystem = "";
+				- _class = "";
+				- _name = "State Diagram 2.0";
+				- _id = GUID fa4355d6-f2df-41ee-b3b4-8d00279d2aef;
+			}
+			- _UpLeft = 0 0 ;
+			- _DownRight = 397 248 ;
+			- _instanceName = "";
+			- m_nDiagramIndex = 6;
+			- m_bIsActiveView = 0;
+		}
+		{ CGEMdiDiagramParams 
+			- _placement = { CCommon_WINDOWPLACEMENT 
+				- m_nLength = 44;
+				- m_nFlags = 0;
+				- m_showCmd = 1;
 				- m_ptMinPositionX = -1;
 				- m_ptMinPositionY = -1;
 				- m_ptMaxPositionX = -8;
@@ -117,11 +204,11 @@ I-Logix-RPY-Archive version 8.12.0 * 9728113
 				- _name = "Task Architecture Diagram";
 				- _id = GUID 3c6d455a-29a8-4e19-ad75-28ae8a952947;
 			}
-			- _UpLeft = 3151 0 ;
-			- _DownRight = 4113 696 ;
+			- _UpLeft = 0 0 ;
+			- _DownRight = 1201 712 ;
 			- _instanceName = "";
-			- m_nDiagramIndex = 0;
-			- m_bIsActiveView = 1;
+			- m_nDiagramIndex = 2;
+			- m_bIsActiveView = 0;
 		}
 	}
 	- _fullName = "C:\\Repos\\SERTS-Final-Project\\SERTS-Final-Project\\Design Documents\\SERTS_AFP_Project\\SERTS_AFP_Project";
