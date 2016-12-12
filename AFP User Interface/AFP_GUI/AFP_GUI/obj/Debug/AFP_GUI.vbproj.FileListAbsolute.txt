@@ -1,0 +1,11 @@
+C:\repos\SERTS-Final-Project\AFP User Interface\AFP_GUI\AFP_GUI\bin\Debug\AFP_GUI.exe.config
+C:\repos\SERTS-Final-Project\AFP User Interface\AFP_GUI\AFP_GUI\obj\Debug\AFP_GUI.vbprojResolveAssemblyReference.cache
+C:\repos\SERTS-Final-Project\AFP User Interface\AFP_GUI\AFP_GUI\obj\Debug\AFP_GUI.Form1.resources
+C:\repos\SERTS-Final-Project\AFP User Interface\AFP_GUI\AFP_GUI\obj\Debug\AFP_GUI.Resources.resources
+C:\repos\SERTS-Final-Project\AFP User Interface\AFP_GUI\AFP_GUI\obj\Debug\AFP_GUI.vbproj.GenerateResource.Cache
+C:\repos\SERTS-Final-Project\AFP User Interface\AFP_GUI\AFP_GUI\obj\Debug\AFP_GUI.xml
+C:\repos\SERTS-Final-Project\AFP User Interface\AFP_GUI\AFP_GUI\bin\Debug\AFP_GUI.exe
+C:\repos\SERTS-Final-Project\AFP User Interface\AFP_GUI\AFP_GUI\bin\Debug\AFP_GUI.pdb
+C:\repos\SERTS-Final-Project\AFP User Interface\AFP_GUI\AFP_GUI\bin\Debug\AFP_GUI.xml
+C:\repos\SERTS-Final-Project\AFP User Interface\AFP_GUI\AFP_GUI\obj\Debug\AFP_GUI.exe
+C:\repos\SERTS-Final-Project\AFP User Interface\AFP_GUI\AFP_GUI\obj\Debug\AFP_GUI.pdb
