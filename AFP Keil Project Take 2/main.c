@@ -42,6 +42,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "Thread.h"
+#include "UART_driver.h"
 
 #ifdef _RTE_
 #include "RTE_Components.h"             /* Component selection */
@@ -104,6 +105,7 @@ int main(void)
 
   /* Add your application code here
      */
+	UART_Init();
 	Init_Thread();
 	// I changed the Debug -> Settings -> Debug -> Port to "SW" (which also changed the clock value right below it)
 

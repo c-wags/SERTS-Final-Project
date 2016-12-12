@@ -9,6 +9,8 @@
 #include "stm32f4_discovery.h"
 #include "stm32f4_discovery_audio.h"
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 // WAVE file header format
 typedef struct WAVHEADER {
@@ -63,12 +65,11 @@ void Init_Thread (void) {
 	tid_Playing = osThreadCreate (osThread(Playing), NULL);
   if (!tid_Playing) return;
 	
-	LED_On(0);
-	
+	//LED_On(0);
 }
 
 void Thread (void const *argument) {
-	usbStatus ustatus; // USB driver status variable
+	/*usbStatus ustatus; // USB driver status variable
 	uint8_t drivenum = 0; // Using U0: drive number
 	char *drive_name = "U0:"; // USB drive name
 	fsStatus fstatus; // file system status variable
@@ -101,7 +102,21 @@ void Thread (void const *argument) {
 			fread((void *)&header, sizeof(header), 1, f);
 			fclose (f); // close the file
 		} // end if file opened
-	} // end if USBH_Initialize
+	} // end if USBH_Initialize*/
+	
+	char r_data[2]={0,0};
+  while (1) {
+		UART_receive(r_data, 1);
+		
+		if(!strcmp(r_data,"P")){
+			LED_Off(2);
+			LED_On(1);
+		}
+		else if(!strcmp(r_data,"I")){
+			LED_Off(1);
+			LED_On(2);
+		}
+	} // end while
 
 } // end Thread
 
