@@ -9,8 +9,10 @@
 #include "stm32f4_discovery.h"
 #include "stm32f4_discovery_audio.h"
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
+#include <stdlib.h>
+
+//#include "Cstring.h"
 
 // WAVE file header format
 typedef struct WAVHEADER {
@@ -29,53 +31,174 @@ typedef struct WAVHEADER {
 	uint32_t data_size;						// NumSamples * NumChannels * BitsPerSample/8 - size of the next chunk that will be read
 } WAVHEADER;
 
+//*************************************************
+
+
+//*************************************************
 // pointer to file type for files on USB device
 FILE *f;
 
-char state; // Char to hold the current state, P = playing, I = indexing, N = initializing
+int count = 0;		//TO be deleteted later.
+//DEFINE PROTOTYPES
+int CurrentState();
+int processEvent(int event);
+void GetAndSendSong();
 
-void Thread (void const *argument);                             // thread function
-osThreadId tid_Thread;                                          // thread id
-osThreadDef (Thread, osPriorityNormal, 1, 0); 
-void Indexing ();                             // thread function
-osThreadId tid_Indexing;                                          // thread id
-osThreadDef (Indexing, osPriorityNormal, 1, 0); 
-void Initializing ();                             		// thread function
-osThreadId tid_Initializing;                                          // thread id
-osThreadDef (Initializing, osPriorityNormal, 1, 0); 
-void Playing ();                             // thread function
-osThreadId tid_Playing;                                          // thread id
-osThreadDef (Playing, osPriorityNormal, 1, 0);                   // thread object
+//DEFINE STATE AND ACTIONS;
+int state = 0;
+
+//define states
+#define startState 0
+#define chooseSongsState 1
+#define PlayingSongState 2
+#define pausingState 3
+
+//define actions
+#define playSongActivity 1
+#define pauseActivity 2
+#define loadAndSendSongsActivity 3
+
+//define events
+#define GetSongPressed 1
+#define Play_Button_Pressed 2
+#define Pause_Button_Pressed 3
+
+
+//DEFINE THREADS
+void CommThread (void const *argument);                             // thread function
+osThreadId tid_CommThread;                                          // thread id
+osThreadDef (CommThread, osPriorityNormal, 1, 0);                   // thread object
+
+void ControlThread (void const *argument);                             // thread function
+osThreadId tid_ControlThread;                                          // thread id
+osThreadDef (ControlThread, osPriorityNormal, 1, 0);                   // thread object
+
+void ProxyThread (void const *argument);                             // thread function
+osThreadId tid_proxyThread;                                          // thread id
+osThreadDef (ProxyThread, osPriorityNormal, 1, 0);                   // thread object
+
+//DEFINE QUEUES
+//Communication to control thread.
+#define COMM_TO_CONTROL_QUEUE_OBJECTS      1                        // number of Message Queue Objects
+osMessageQId mid_CommToControlQueue;                               // message queue id
+osMessageQDef (CommToControlQueue, COMM_TO_CONTROL_QUEUE_OBJECTS, int32_t);     // message queue object
+
+//Communication to control thread.
+#define CONT_TO_PROXY_QUEUE_OBJECTS      1                        // number of Message Queue Objects
+osMessageQId mid_ContToProxyQueue;                               // message queue id
+osMessageQDef (ContToProxyQueue, CONT_TO_PROXY_QUEUE_OBJECTS, int32_t);     // message queue object
+
+#define MSGQUEUE_OBJECTS 1
+osMessageQId mid_MsgQueue;                               // message queue id
+osMessageQDef (MsgQueue, MSGQUEUE_OBJECTS, int32_t);     // message queue object
+/*----------------------------------------------------------------------------
+ *      Thread 1 'Thread_Name': Sample thread
+ *---------------------------------------------------------------------------*/
+ #define NUM_CHAN	2 // number of audio channels
+ #define NUM_POINTS 1024 // number of points per channel
+ #define BUF_LEN NUM_CHAN*NUM_POINTS // length of the audio buffer
+/* Private variables ---------------------------------------------------------*/
+/* buffer used for audio play */
+int16_t Audio_Buffer1[BUF_LEN];
+int16_t Audio_Buffer2[BUF_LEN];
+osSemaphoreDef (SEM0); // Declare semaphore
+osSemaphoreId (SEM0_id); // Semaphore ID
+char r_dataString[50];	//Song to play received from the GUI.
+bool pauseRequest = false;
 
 void Init_Thread (void) {
 
+	state = 0;
+	
+	//Initializing LEDs and Serial Communication.
 	LED_Initialize();
 	UART_Init();
 	
-	tid_Thread = osThreadCreate (osThread(Thread), NULL);
-  if (!tid_Thread) return;
+	//INITIALIZE QUEUES.
+	//Initialize COmmunication to Control queue.
+	mid_CommToControlQueue = osMessageCreate (osMessageQ(CommToControlQueue), NULL);  // create queue
+  if (!mid_CommToControlQueue) {
+    ; // Message Queue object not created, handle failure
+  }
 	
-	tid_Indexing = osThreadCreate (osThread(Indexing), NULL);
-  if (!tid_Indexing) return;
+		//Initialize Control to proxy queue.
+	mid_ContToProxyQueue = osMessageCreate (osMessageQ(ContToProxyQueue), NULL);  // create queue
+  if (!mid_ContToProxyQueue) {
+    ; // Message Queue object not created, handle failure
+  }
 	
-	tid_Indexing = osThreadCreate (osThread(Initializing), NULL);
-  if (!tid_Initializing) return;
+	mid_MsgQueue = osMessageCreate (osMessageQ(MsgQueue), NULL);  // create msg queue
+  if (!mid_MsgQueue) {
+    ; // Message Queue object not created, handle failure
+  }
 	
-	tid_Playing = osThreadCreate (osThread(Playing), NULL);
-  if (!tid_Playing) return;
+	//INITIALIZE THREADS
+	//Initialize Communication thread ID
+	tid_CommThread = osThreadCreate (osThread(CommThread), NULL);
+  if (!tid_CommThread) return;
+	
+	//Initialize Control thread ID.
+	tid_ControlThread = osThreadCreate (osThread(ControlThread), NULL);
+  if (!tid_ControlThread) return;
+	
+	//Initialize Proxy thread
+	tid_proxyThread = osThreadCreate (osThread(ProxyThread), NULL);
+  if (!tid_proxyThread) return;
+	
+	SEM0_id = osSemaphoreCreate(osSemaphore(SEM0),0);	//Initialize the semaphore with a zero
+
+	LED_On(1);
+	
 }
 
-void Thread (void const *argument) {
-	/*usbStatus ustatus; // USB driver status variable
+
+void ControlThread (void const *argument) {
+	osEvent evt; // Receive message object
+	uint16_t Action;
+	while(1){
+		evt = osMessageGet (mid_CommToControlQueue, osWaitForever); // for message
+		if (evt.status == osEventMessage) { // check for valid message
+
+			int action = processEvent(evt.value.v);
+			
+			if(action == loadAndSendSongsActivity){	
+				osMessagePut (mid_ContToProxyQueue, loadAndSendSongsActivity, osWaitForever);
+			}			
+			else if (action == playSongActivity)
+					osMessagePut(mid_ContToProxyQueue, playSongActivity, osWaitForever);	
+			else if (action == pauseActivity)
+				osMessagePut(mid_ContToProxyQueue, pauseActivity, osWaitForever);	
+				//set the pauseRequest flag to True
+			  //BSP_AUDIO_OUT_Pause();
+				//pauseRequest = !pauseRequest;
+			
+	} // end while loop
+}
+}
+
+void ProxyThread (void const *argument) {
+
+	usbStatus ustatus; // USB driver status variable
 	uint8_t drivenum = 0; // Using U0: drive number
 	char *drive_name = "U0:"; // USB drive name
 	fsStatus fstatus; // file system status variable
+	osEvent evt; // Receive message object
+	osEvent evt1;
+	uint16_t Action;
+	//static FILE *f;
+	
 	WAVHEADER header;
 	size_t rd;
 	uint32_t i;
 	static uint8_t rtrn = 0;
 	uint8_t rdnum = 1; // read buffer number
 	
+	
+	// initialize the audio output
+	rtrn = BSP_AUDIO_OUT_Init(OUTPUT_DEVICE_AUTO, 0x46, 44100);
+	if (rtrn != AUDIO_OK)return;
+	
+	LED_On(0);
 	ustatus = USBH_Initialize (drivenum); // initialize the USB Host
 	if (ustatus == usbOK){
 		// loop until the device is OK, may be delay from Initialize
@@ -93,65 +216,202 @@ void Thread (void const *argument) {
 		if (fstatus != fsOK){
 			// handle the error, fmount didn't work
 		} // end if 
-		// file system and drive are good to go
-		f = fopen ("Test.wav","r");// open a file on the USB device
-		if (f != NULL) {
-			fread((void *)&header, sizeof(header), 1, f);
-			fclose (f); // close the file
-		} // end if file opened
-	} // end if USBH_Initialize*/
-	
-	char r_data[2]={0,0}; // Value P = Playing, I = Indexing, N = Initializing
-  while (1) {
-		UART_receive(r_data, 1);
 		
-		if(!strcmp(r_data,"N")){
-			LED_Off(1);
-			LED_Off(2);
-			LED_On(3);
-			state = 'N';
-			Indexing();
-		}
-		if(!strcmp(r_data,"P")){
-			LED_Off(2);
-			LED_Off(3);
-			LED_On(1);
-			state = 'P';
-			Playing();
-		}
-		else if(!strcmp(r_data,"I")){
-			LED_Off(1);
-			LED_Off(3);
-			LED_On(2);
-			state = 'I';
-			Indexing();
-		}
-	} // end while
-
-} // end Thread
-
-void Initializing () {  // Switch to Initializing when GUI starts up
-	if(state != 'N') {
-		osThreadYield(); // Switch to indexing thread
-	}
+		fsFileInfo info;
+		info.fileID = 0;
 		
+		while(1){
+			//evt = osMessageGet (mid_ContToProxyQueue, osWaitForever); // for message
+			//if (evt.status == osEventMessage) { // check for valid message	
+				//if(evt.value.v == loadAndSendSongsActivity){		
+						while (ffind ("U0:*.*", &info) == fsOK) {     // find whatever is in drive "R0:"
+							UART_send(info.name,strlen(info.name)); 
+							UART_send("\n",1);
+							//UART_send("hELLO\n\r",6);
+						}	
+				//}
+				/*else if(evt.value.v == playSongActivity )
+				{	
+						//opens the selected file on the GUI
+						f = fopen (r_dataString,"r");// open a file on the USB device
+						int haveOtherData;
+						if (f != NULL) {
+							haveOtherData = fread((void *)&header, sizeof(header), 1, f);
+						
+							//fclose (f); // close the file
+						} // end if file opened
+						
+						if (haveOtherData > 0) {
+						haveOtherData = fread((void *)&Audio_Buffer1, sizeof(Audio_Buffer1), 1, f);
+						}
+						
+						BSP_AUDIO_OUT_Play((uint16_t *)Audio_Buffer1, BUF_LEN);
+						uint8_t controllingVariable = 2;
+					
+						while( haveOtherData > 0)
+						{
+							
+								evt = osMessageGet (mid_ContToProxyQueue, 0); // for message
+								if (evt.status == osEventMessage) {
+									if(evt.value.v == pauseActivity)
+									{
+										BSP_AUDIO_OUT_Pause();
+										BSP_AUDIO_OUT_SetMute(AUDIO_MUTE_ON);
+										
+										evt1 = osMessageGet (mid_ContToProxyQueue, osWaitForever); // for message
+											if (evt1.status == osEventMessage) {
+												if(evt1.value.v == playSongActivity){
+													BSP_AUDIO_OUT_SetMute(AUDIO_MUTE_OFF);
+													BSP_AUDIO_OUT_Resume();
+												}								
+											}							
+									}
+									else if(evt.value.v == playSongActivity)
+									{
+										fclose(f);
+										BSP_AUDIO_OUT_SetMute(AUDIO_MUTE_ON);
+										
+										//opens the selected file on the GUI
+										f = fopen (r_dataString,"r");// open a file on the USB device
+										if (f != NULL) {
+											haveOtherData = fread((void *)&header, sizeof(header), 1, f);
+										
+											//fclose (f); // close the file
+										} // end if file opened
+										
+										if (haveOtherData > 0) {
+										haveOtherData = fread((void *)&Audio_Buffer1, sizeof(Audio_Buffer1), 1, f);
+										}
+										BSP_AUDIO_OUT_SetMute(AUDIO_MUTE_OFF);
+										BSP_AUDIO_OUT_Play((uint16_t *)Audio_Buffer1, BUF_LEN);
+										controllingVariable = 2;						
+									}
+									
+									
+							}
+							if(controllingVariable == 1)
+							{
+								// generate data for the audio buffer 1
+							haveOtherData = fread((void *)&Audio_Buffer1, sizeof(Audio_Buffer1), 1, f);
+								
+								osMessagePut (mid_MsgQueue, controllingVariable, osWaitForever); // Send Message
+								controllingVariable=2;
+								osSemaphoreWait(SEM0_id, osWaitForever);
+							}
+							else
+							{
+								// generate data for the audio buffer 2		
+								haveOtherData = fread((void *)&Audio_Buffer2, sizeof(Audio_Buffer2), 1, f);
+								
+								osMessagePut (mid_MsgQueue, controllingVariable, osWaitForever); // Send Message
+								controllingVariable = 1;
+								osSemaphoreWait(SEM0_id, osWaitForever);
+							}
+						}
+
+					fclose(f);	//Close the file.
+					BSP_AUDIO_OUT_SetMute(AUDIO_MUTE_ON);						
+					} // end if USBH_Initialize 
+					else if (evt.value.v == pauseActivity)
+					{
+					}
+				}
+			}*/ 
+		}
+	}
+
+/*void openAndStartFile()
+{
 	
-	
-	osThreadYield(); // Switch to indexing thread
 }
 
-void Indexing () {  // Switch to Playing when play button pressed
-	if(state != 'I') {
-		osThreadYield(); // Switch to playing thread
+int processEvent(int event)
+{
+	if(event ==  GetSongPressed && CurrentState() == startState){
+		state = chooseSongsState;
+		return loadAndSendSongsActivity;
 	}
-	
-	osThreadYield(); // Switch to playing thread
+		else if (event == Play_Button_Pressed && CurrentState() == chooseSongsState){
+			state = PlayingSongState;
+			return playSongActivity;
+		}	
+		else if(event == Pause_Button_Pressed && CurrentState() == PlayingSongState)
+		{
+			state = pausingState;
+			return pauseActivity;				
+		}
+		else if(event == Pause_Button_Pressed && CurrentState() == pausingState)
+		{
+			state = PlayingSongState;
+			return playSongActivity;
+		}
+			
+		else if(event == Play_Button_Pressed && CurrentState() == PlayingSongState)
+		{
+			state = PlayingSongState;
+			return playSongActivity;
+		}
 }
 
-void Playing () {  // Switch to Indexing pause button pressed or song ends
-	if(state != 'P') {
-		osThreadYield(); // Switch to indexing thread
-	}
-	
-	osThreadYield(); // Switch to playing thread
+int CurrentState(){
+	return state;
 }
+
+void CommThread (void const *argument) {
+
+//*************************************************************************
+	//RECEIVE SERIAL DATA
+	char r_data[7] = {0,0,0,0,0};
+		while (1) {
+			//We are not receiving anything, and hence the execution is transferde to the control thread! 
+			UART_receive(r_data, 5); 
+			
+			if(!strcmp(r_data,"PAUSE")){
+				osMessagePut(mid_CommToControlQueue, Pause_Button_Pressed, osWaitForever);
+				
+			}
+			else if(!strcmp(r_data,"PLAYS")){
+				UART_receivestring(r_dataString, 50); 
+				osMessagePut(mid_CommToControlQueue, Play_Button_Pressed, osWaitForever);
+			}		
+			else if(!strcmp(r_data,"GETSO")){			
+				osMessagePut(mid_CommToControlQueue, GetSongPressed, osWaitForever);
+			}
+		} // end while
+}
+
+void    BSP_AUDIO_OUT_TransferComplete_CallBack(void){
+	
+	//int32_t controllingVariable ;
+	osEvent evt; // receive object
+  evt = osMessageGet (mid_MsgQueue, 0);           // wait for message
+  if (evt.status == osEventMessage)
+	{		// check for valid message
+		//evt.value.v;
+	
+		if(evt.value.v == 1)
+				BSP_AUDIO_OUT_ChangeBuffer((uint16_t*)Audio_Buffer1, BUF_LEN);	
+		
+				
+		else		
+			 BSP_AUDIO_OUT_ChangeBuffer((uint16_t*)Audio_Buffer2, BUF_LEN);	
+		
+	}
+	osSemaphoreRelease(SEM0_id);
+//	else
+	//	BSP_AUDIO_OUT_ChangeBuffer((uint16_t*)Audio_Buffer1, BUF_LEN);	
+	
+}
+*/
+/* This function is called when half of the requested buffer has been transferred. */
+//void    BSP_AUDIO_OUT_HalfTransfer_CallBack(void){
+//}
+
+/* This function is called when an Interrupt due to transfer error on or peripheral
+   error occurs. */
+//void    BSP_AUDIO_OUT_Error_CallBack(void){
+//		while(1){
+//		}
+}
+
+

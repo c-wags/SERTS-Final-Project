@@ -32,6 +32,7 @@ Partial Class Form1
         Me.SongTitle = New System.Windows.Forms.Label()
         Me.SerialPort1 = New System.IO.Ports.SerialPort(Me.components)
         Me.IndexOfSongs = New System.Windows.Forms.ListBox()
+        Me.GetSongListButton = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Play
@@ -97,6 +98,10 @@ Partial Class Form1
         Me.SongTitle.Text = "SongTitle"
         Me.SongTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'SerialPort1
+        '
+        Me.SerialPort1.PortName = "COM4"
+        '
         'IndexOfSongs
         '
         Me.IndexOfSongs.FormattingEnabled = True
@@ -105,11 +110,21 @@ Partial Class Form1
         Me.IndexOfSongs.Size = New System.Drawing.Size(485, 238)
         Me.IndexOfSongs.TabIndex = 8
         '
+        'GetSongListButton
+        '
+        Me.GetSongListButton.Location = New System.Drawing.Point(59, 50)
+        Me.GetSongListButton.Name = "GetSongListButton"
+        Me.GetSongListButton.Size = New System.Drawing.Size(75, 23)
+        Me.GetSongListButton.TabIndex = 9
+        Me.GetSongListButton.Text = "Get Song List"
+        Me.GetSongListButton.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(787, 419)
+        Me.Controls.Add(Me.GetSongListButton)
         Me.Controls.Add(Me.IndexOfSongs)
         Me.Controls.Add(Me.SongTitle)
         Me.Controls.Add(Me.EndTime)
@@ -134,4 +149,5 @@ Partial Class Form1
     Friend WithEvents SongTitle As Label
     Friend WithEvents SerialPort1 As IO.Ports.SerialPort
     Friend WithEvents IndexOfSongs As ListBox
+    Friend WithEvents GetSongListButton As System.Windows.Forms.Button
 End Class

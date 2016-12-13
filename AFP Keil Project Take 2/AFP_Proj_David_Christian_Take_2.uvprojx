@@ -438,11 +438,6 @@
               <FilePath>.\stm32f4xx_it.h</FilePath>
             </File>
             <File>
-              <FileName>Thread.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Thread.c</FilePath>
-            </File>
-            <File>
               <FileName>Thread.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Thread.h</FilePath>
@@ -456,6 +451,11 @@
               <FileName>UART_driver.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\UART_driver.h</FilePath>
+            </File>
+            <File>
+              <FileName>Thread2.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Thread2.c</FilePath>
             </File>
           </Files>
         </Group>
