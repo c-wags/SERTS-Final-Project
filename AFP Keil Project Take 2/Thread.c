@@ -32,21 +32,20 @@ typedef struct WAVHEADER {
 // pointer to file type for files on USB device
 FILE *f;
 
+char state; // Char to hold the current state, P = playing, I = indexing, N = initializing
+
 void Thread (void const *argument);                             // thread function
 osThreadId tid_Thread;                                          // thread id
 osThreadDef (Thread, osPriorityNormal, 1, 0); 
-void SDCO (void const *argument);                             // thread function
-osThreadId tid_SDCO;                                          // thread id
-osThreadDef (SDCO, osPriorityNormal, 1, 0); 
-void Indexing (void const *argument);                             // thread function
+void Indexing ();                             // thread function
 osThreadId tid_Indexing;                                          // thread id
 osThreadDef (Indexing, osPriorityNormal, 1, 0); 
-void Playing (void const *argument);                             // thread function
+void Initializing ();                             		// thread function
+osThreadId tid_Initializing;                                          // thread id
+osThreadDef (Initializing, osPriorityNormal, 1, 0); 
+void Playing ();                             // thread function
 osThreadId tid_Playing;                                          // thread id
 osThreadDef (Playing, osPriorityNormal, 1, 0);                   // thread object
-
-// Variable to show what state we're in: 0=indexing, 1=playing
-int state = 0;
 
 void Init_Thread (void) {
 
@@ -56,16 +55,14 @@ void Init_Thread (void) {
 	tid_Thread = osThreadCreate (osThread(Thread), NULL);
   if (!tid_Thread) return;
 	
-	tid_SDCO = osThreadCreate (osThread(SDCO), NULL);
-  if (!tid_SDCO) return;
-	
 	tid_Indexing = osThreadCreate (osThread(Indexing), NULL);
   if (!tid_Indexing) return;
 	
+	tid_Indexing = osThreadCreate (osThread(Initializing), NULL);
+  if (!tid_Initializing) return;
+	
 	tid_Playing = osThreadCreate (osThread(Playing), NULL);
   if (!tid_Playing) return;
-	
-	//LED_On(0);
 }
 
 void Thread (void const *argument) {
@@ -104,30 +101,57 @@ void Thread (void const *argument) {
 		} // end if file opened
 	} // end if USBH_Initialize*/
 	
-	char r_data[2]={0,0};
+	char r_data[2]={0,0}; // Value P = Playing, I = Indexing, N = Initializing
   while (1) {
 		UART_receive(r_data, 1);
 		
+		if(!strcmp(r_data,"N")){
+			LED_Off(1);
+			LED_Off(2);
+			LED_On(3);
+			state = 'N';
+			Indexing();
+		}
 		if(!strcmp(r_data,"P")){
 			LED_Off(2);
+			LED_Off(3);
 			LED_On(1);
+			state = 'P';
+			Playing();
 		}
 		else if(!strcmp(r_data,"I")){
 			LED_Off(1);
+			LED_Off(3);
 			LED_On(2);
+			state = 'I';
+			Indexing();
 		}
 	} // end while
 
 } // end Thread
 
-void SDCO (void const *argument) {
+void Initializing () {  // Switch to Initializing when GUI starts up
+	if(state != 'N') {
+		osThreadYield(); // Switch to indexing thread
+	}
+		
 	
+	
+	osThreadYield(); // Switch to indexing thread
 }
 
-void Indexing (void const *argument) {
-	// Switch to Playing when play button pressed
+void Indexing () {  // Switch to Playing when play button pressed
+	if(state != 'I') {
+		osThreadYield(); // Switch to playing thread
+	}
+	
+	osThreadYield(); // Switch to playing thread
 }
 
-void Playing (void const *argument) {
-	// Switch to Indexing pause button pressed or song ends
+void Playing () {  // Switch to Indexing pause button pressed or song ends
+	if(state != 'P') {
+		osThreadYield(); // Switch to indexing thread
+	}
+	
+	osThreadYield(); // Switch to playing thread
 }
