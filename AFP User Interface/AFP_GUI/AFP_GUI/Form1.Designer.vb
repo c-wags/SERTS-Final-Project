@@ -101,6 +101,7 @@ Partial Class Form1
         'SerialPort1
         '
         Me.SerialPort1.PortName = "COM4"
+        Me.SerialPort1.ReadTimeout = 10000
         '
         'IndexOfSongs
         '

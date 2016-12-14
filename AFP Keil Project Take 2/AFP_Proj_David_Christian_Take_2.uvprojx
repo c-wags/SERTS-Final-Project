@@ -443,6 +443,11 @@
               <FilePath>.\Thread.h</FilePath>
             </File>
             <File>
+              <FileName>Thread3.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Thread3.c</FilePath>
+            </File>
+            <File>
               <FileName>UART_driver.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\UART_driver.c</FilePath>
@@ -451,11 +456,6 @@
               <FileName>UART_driver.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\UART_driver.h</FilePath>
-            </File>
-            <File>
-              <FileName>Thread2.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Thread2.c</FilePath>
             </File>
           </Files>
         </Group>

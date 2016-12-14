@@ -6,7 +6,7 @@ I (audio.h)(0x579BBB2E)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x56FEF9AE)
 F (.\cs43l22.h)(0x57FEB7A4)()
 F (.\libPDMFilter_CM4_Keil.lib)(0x579BBB56)()
-F (.\main.c)(0x5850323C)(-c --cpu Cortex-M4.fp -D__RTX -g -O0 --apcs=interwork --split_sections-I "C:\Repos\SERTS-Final-Project\SERTS-Final-Project\AFP Keil Project Take 2\RTE"-I "C:\Repos\SERTS-Final-Project\SERTS-Final-Project\AFP Keil Project Take 2\RTE\Device\STM32F407VGTx"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Driver\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\RTOS\RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.2.0\Board-I C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.2.0\FileSystem\Include-I C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.2.0\USB\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\STM32F4xx_HAL_Driver\Inc-D__UVISION_VERSION="520" -D_RTE_ -DSTM32F407xx -DHSE_VALUE="8000000" -DUSE_HAL_DRIVER -DSTM32F407xx -DUSE_STM32F4_DISCO -DARM_MATH_CM4 --C99-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+F (.\main.c)(0x5850B293)(-c --cpu Cortex-M4.fp -D__RTX -g -O0 --apcs=interwork --split_sections-I "C:\Repos\SERTS-Final-Project\SERTS-Final-Project\AFP Keil Project Take 2\RTE"-I "C:\Repos\SERTS-Final-Project\SERTS-Final-Project\AFP Keil Project Take 2\RTE\Device\STM32F407VGTx"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Driver\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\RTOS\RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.2.0\Board-I C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.2.0\FileSystem\Include-I C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.2.0\USB\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\STM32F4xx_HAL_Driver\Inc-D__UVISION_VERSION="520" -D_RTE_ -DSTM32F407xx -DHSE_VALUE="8000000" -DUSE_HAL_DRIVER -DSTM32F407xx -DUSE_STM32F4_DISCO -DARM_MATH_CM4 --C99-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
 I (main.h)(0x583DA481)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h)(0x57311A2E)
 I (C:\Repos\SERTS-Final-Project\SERTS-Final-Project\AFP Keil Project Take 2\RTE\Device\STM32F407VGTx\stm32f4xx_hal_conf.h)(0x574C971E)
@@ -47,7 +47,7 @@ I (cs43l22.h)(0x57FEB7A4)
 I (audio.h)(0x579BBB2E)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Middlewares\ST\STM32_Audio\Addons\PDM\pdm_filter.h)(0x572CBD16)
 I (Thread.h)(0x583D9AD8)
-I (UART_driver.h)(0x58504B11)
+I (UART_driver.h)(0x580F60D2)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x56FEF9AE)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Driver\Include\Driver_USART.h)(0x5735E578)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Driver\Include\Driver_Common.h)(0x5735E578)
@@ -174,53 +174,12 @@ I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Middlewares\ST\STM32_Audio\Addon
 I (stm32f4xx_it.h)(0x574C971E)
 F (.\stm32f4xx_it.h)(0x574C971E)()
 F (.\Thread.h)(0x583D9AD8)()
-F (.\UART_driver.c)(0x58504AA5)(-c --cpu Cortex-M4.fp -D__RTX -g -O0 --apcs=interwork --split_sections-I "C:\Repos\SERTS-Final-Project\SERTS-Final-Project\AFP Keil Project Take 2\RTE"-I "C:\Repos\SERTS-Final-Project\SERTS-Final-Project\AFP Keil Project Take 2\RTE\Device\STM32F407VGTx"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Driver\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\RTOS\RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.2.0\Board-I C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.2.0\FileSystem\Include-I C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.2.0\USB\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\STM32F4xx_HAL_Driver\Inc-D__UVISION_VERSION="520" -D_RTE_ -DSTM32F407xx -DHSE_VALUE="8000000" -DUSE_HAL_DRIVER -DSTM32F407xx -DUSE_STM32F4_DISCO -DARM_MATH_CM4 --C99-o .\objects\uart_driver.o --omf_browse .\objects\uart_driver.crf --depend .\objects\uart_driver.d)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\RTOS\RTX\INC\cmsis_os.h)(0x57364C70)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x56FEF9AE)
-I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x56FEF9AE)
-I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x56FEF9AE)
-I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x56FEF9AE)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x572CBC7E)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f407xx.h)(0x572CBC7E)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include\core_cm4.h)(0x57364C6E)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include\core_cminstr.h)(0x5735E576)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include\cmsis_armcc.h)(0x5735E576)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include\core_cmfunc.h)(0x5735E576)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include\core_cmsimd.h)(0x5735E576)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x572CBC80)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h)(0x57311A2E)
-I (C:\Repos\SERTS-Final-Project\SERTS-Final-Project\AFP Keil Project Take 2\RTE\Device\STM32F407VGTx\stm32f4xx_hal_conf.h)(0x574C971E)
-I (C:\Repos\SERTS-Final-Project\SERTS-Final-Project\AFP Keil Project Take 2\RTE\RTE_Components.h)(0x5846CF46)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h)(0x57311A30)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_def.h)(0x57311A30)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\STM32F4xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h)(0x57311B64)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc_ex.h)(0x57311A30)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_gpio.h)(0x57311A30)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_gpio_ex.h)(0x57311A30)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_dma.h)(0x57311A30)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_dma_ex.h)(0x57311A30)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_cortex.h)(0x57311A2E)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash.h)(0x57311A30)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash_ex.h)(0x57311A2E)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash_ramfunc.h)(0x57311A2E)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_i2c.h)(0x57311A30)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_i2c_ex.h)(0x57311A30)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_i2s.h)(0x57311A30)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_i2s_ex.h)(0x57311A30)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr.h)(0x57311A30)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr_ex.h)(0x57311A2E)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_spi.h)(0x57311A30)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_usart.h)(0x57311A30)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Driver\Include\Driver_USART.h)(0x5735E578)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Driver\Include\Driver_Common.h)(0x5735E578)
-I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x56FEF9AC)
-F (.\UART_driver.h)(0x58504B11)()
-F (.\Thread2.c)(0x58508997)(-c --cpu Cortex-M4.fp -D__RTX -g -O0 --apcs=interwork --split_sections-I "C:\Repos\SERTS-Final-Project\SERTS-Final-Project\AFP Keil Project Take 2\RTE"-I "C:\Repos\SERTS-Final-Project\SERTS-Final-Project\AFP Keil Project Take 2\RTE\Device\STM32F407VGTx"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Driver\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\RTOS\RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.2.0\Board-I C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.2.0\FileSystem\Include-I C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.2.0\USB\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\STM32F4xx_HAL_Driver\Inc-D__UVISION_VERSION="520" -D_RTE_ -DSTM32F407xx -DHSE_VALUE="8000000" -DUSE_HAL_DRIVER -DSTM32F407xx -DUSE_STM32F4_DISCO -DARM_MATH_CM4 --C99-o .\objects\thread2.o --omf_browse .\objects\thread2.crf --depend .\objects\thread2.d)
+F (.\Thread3.c)(0x580F7D97)(-c --cpu Cortex-M4.fp -D__RTX -g -O0 --apcs=interwork --split_sections-I "C:\Repos\SERTS-Final-Project\SERTS-Final-Project\AFP Keil Project Take 2\RTE"-I "C:\Repos\SERTS-Final-Project\SERTS-Final-Project\AFP Keil Project Take 2\RTE\Device\STM32F407VGTx"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Driver\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\RTOS\RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.2.0\Board-I C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.2.0\FileSystem\Include-I C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.2.0\USB\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\STM32F4xx_HAL_Driver\Inc-D__UVISION_VERSION="520" -D_RTE_ -DSTM32F407xx -DHSE_VALUE="8000000" -DUSE_HAL_DRIVER -DSTM32F407xx -DUSE_STM32F4_DISCO -DARM_MATH_CM4 --C99-o .\objects\thread3.o --omf_browse .\objects\thread3.crf --depend .\objects\thread3.d)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\RTOS\RTX\INC\cmsis_os.h)(0x57364C70)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x56FEF9AE)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x56FEF9AE)
 I (C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.2.0\Board\Board_LED.h)(0x53BBD922)
-I (UART_driver.h)(0x58504B11)
+I (UART_driver.h)(0x580F60D2)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x56FEF9AE)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x56FEF9AE)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Driver\Include\Driver_USART.h)(0x5735E578)
@@ -233,11 +192,13 @@ I (C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.2.0\USB\Include\usb_cdc.h)(0x577693
 I (C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.2.0\USB\Include\usb_hid.h)(0x57769320)
 I (C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.2.0\USB\Include\usb_msc.h)(0x57769320)
 I (C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.2.0\FileSystem\Include\rl_fs.h)(0x57728180)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h)(0x57311A2E)
-I (C:\Repos\SERTS-Final-Project\SERTS-Final-Project\AFP Keil Project Take 2\RTE\Device\STM32F407VGTx\stm32f4xx_hal_conf.h)(0x574C971E)
-I (C:\Repos\SERTS-Final-Project\SERTS-Final-Project\AFP Keil Project Take 2\RTE\RTE_Components.h)(0x5846CF46)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h)(0x57311A30)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_def.h)(0x57311A30)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x56FEF9AE)
+F (.\UART_driver.c)(0x580F60B5)(-c --cpu Cortex-M4.fp -D__RTX -g -O0 --apcs=interwork --split_sections-I "C:\Repos\SERTS-Final-Project\SERTS-Final-Project\AFP Keil Project Take 2\RTE"-I "C:\Repos\SERTS-Final-Project\SERTS-Final-Project\AFP Keil Project Take 2\RTE\Device\STM32F407VGTx"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Driver\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\RTOS\RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.2.0\Board-I C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.2.0\FileSystem\Include-I C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.2.0\USB\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\STM32F4xx_HAL_Driver\Inc-D__UVISION_VERSION="520" -D_RTE_ -DSTM32F407xx -DHSE_VALUE="8000000" -DUSE_HAL_DRIVER -DSTM32F407xx -DUSE_STM32F4_DISCO -DARM_MATH_CM4 --C99-o .\objects\uart_driver.o --omf_browse .\objects\uart_driver.crf --depend .\objects\uart_driver.d)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\RTOS\RTX\INC\cmsis_os.h)(0x57364C70)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x56FEF9AE)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x56FEF9AE)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x56FEF9AE)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x56FEF9AE)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x572CBC7E)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f407xx.h)(0x572CBC7E)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include\core_cm4.h)(0x57364C6E)
@@ -246,6 +207,11 @@ I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include\cmsis_armcc.h)(0x5735
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include\core_cmfunc.h)(0x5735E576)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include\core_cmsimd.h)(0x5735E576)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x572CBC80)
+I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h)(0x57311A2E)
+I (C:\Repos\SERTS-Final-Project\SERTS-Final-Project\AFP Keil Project Take 2\RTE\Device\STM32F407VGTx\stm32f4xx_hal_conf.h)(0x574C971E)
+I (C:\Repos\SERTS-Final-Project\SERTS-Final-Project\AFP Keil Project Take 2\RTE\RTE_Components.h)(0x5846CF46)
+I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h)(0x57311A30)
+I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_def.h)(0x57311A30)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\STM32F4xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h)(0x57311B64)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc_ex.h)(0x57311A30)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_gpio.h)(0x57311A30)
@@ -264,14 +230,10 @@ I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\STM32F4xx_HAL_Driver\Inc
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr_ex.h)(0x57311A2E)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_spi.h)(0x57311A30)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_usart.h)(0x57311A30)
-I (stm32f4_discovery.h)(0x579BBB38)
-I (stm32f4_discovery_audio.h)(0x57FEB512)
-I (cs43l22.h)(0x57FEB7A4)
-I (audio.h)(0x579BBB2E)
-I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Middlewares\ST\STM32_Audio\Addons\PDM\pdm_filter.h)(0x572CBD16)
-I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x56FEF9AE)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include\arm_math.h)(0x5735E578)
-I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x56FEF9A6)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Driver\Include\Driver_USART.h)(0x5735E578)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Driver\Include\Driver_Common.h)(0x5735E578)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x56FEF9AC)
+F (.\UART_driver.h)(0x580F60D2)()
 F (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\MDK\Boards\ST\STM32F4-Discovery\Common\Buttons_F4Discovery.c)(0x5411ADEC)(-c --cpu Cortex-M4.fp -D__RTX -g -O0 --apcs=interwork --split_sections-I "C:\Repos\SERTS-Final-Project\SERTS-Final-Project\AFP Keil Project Take 2\RTE"-I "C:\Repos\SERTS-Final-Project\SERTS-Final-Project\AFP Keil Project Take 2\RTE\Device\STM32F407VGTx"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Driver\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\RTOS\RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.2.0\Board-I C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.2.0\FileSystem\Include-I C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.2.0\USB\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\STM32F4xx_HAL_Driver\Inc-D__UVISION_VERSION="520" -D_RTE_ -DSTM32F407xx -DHSE_VALUE="8000000" -DUSE_HAL_DRIVER -DSTM32F407xx -DUSE_STM32F4_DISCO -DARM_MATH_CM4 --C99-o .\objects\buttons_f4discovery.o --omf_browse .\objects\buttons_f4discovery.crf --depend .\objects\buttons_f4discovery.d)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h)(0x57311A2E)
 I (C:\Repos\SERTS-Final-Project\SERTS-Final-Project\AFP Keil Project Take 2\RTE\Device\STM32F407VGTx\stm32f4xx_hal_conf.h)(0x574C971E)

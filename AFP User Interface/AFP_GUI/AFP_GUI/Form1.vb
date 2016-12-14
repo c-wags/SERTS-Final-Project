@@ -14,6 +14,7 @@ Public Class Form1
         'When button is clicked send an R to get the red response
         If SerialPort1.IsOpen Then
             SerialPort1.Write("I", 0, 1) 'Send the pause command to the AFP
+            SerialPort1.Write(vbNullChar, 0, 1)
         End If
     End Sub
 
@@ -21,6 +22,7 @@ Public Class Form1
         'When button is clicked send a G to get the green response
         If SerialPort1.IsOpen Then
             SerialPort1.Write("P", 0, 1) 'Send the play command to the AFP
+            SerialPort1.Write(vbNullChar, 0, 1)
         End If
 
     End Sub
@@ -32,24 +34,37 @@ Public Class Form1
         Catch
             Console.WriteLine("Failed to open serial port")
         End Try
+        'Thread_0.Start()
     End Sub
     'Initialization Thread
     Private Sub Thread_0_method()
+        'SerialPort1.ReadTimeout = 1000
         SerialPort1.Write("N", 0, 1) 'Send initialization command to the AFP
-        Dim str As String
+        SerialPort1.Write(vbNullChar, 0, 1)
+        'Dim str As String
         Dim initString As String
-        str = "Init"
-        While (str = "Init")
-            'Getting the file names that the AFP sends during initialization
-            initString = SerialPort1.ReadLine()
-            If (initString = "Done_Init") Then
-                str = "Done_Init"
-            ElseIf (str = "Init") Then
-                IndexOfSongs.Invoke(ListBoxDel, initString)
+        'Str = "Init"
+        'While (str = "Init")
+        While 1
+            If SerialPort1.IsOpen Then
+                'Getting the file names that the AFP sends during initialization
+                'initString = SerialPort1.ReadLine()
+                While SerialPort1.BytesToRead > 0
+                    'SerialPort1.Read(initString, 0, 50)
+                    initString = SerialPort1.ReadLine()
+                    'System.Diagnostics.Debug.Write(initString)
+                    'If (initString = "Done_Init") Then
+                    ' Str = "Done_Init"
+                    'Else
+                    'IndexOfSongs.Invoke(ListBoxDel, initString)
+                    'End If
+                    IndexOfSongs.Invoke(ListBoxDel, initString)
+                End While
             End If
         End While
         ' Sort songs alphabetically
         IndexOfSongs.Sorted = True
+        GetSongListButton.Enabled = False
     End Sub
     'The Play Thread
     Private Sub Thread_1_method()

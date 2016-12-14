@@ -152,9 +152,7 @@ void Initializing (void) {  // Switch to Initializing when GUI starts up
 			//UART_send(info.name,strlen(info.name));
 			//UART_send("\n",1);
 			UART_send(info.name,strlen(info.name)); // send to UART
-			osDelay(500);
 			UART_send("\n",1);
-			osDelay(500);
 		}
 		//UART_send("Done_Init\n",10);
 	} // end if USBH_Initialize	
